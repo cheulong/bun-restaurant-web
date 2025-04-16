@@ -16,7 +16,7 @@ docker compose -f compose.dev.yaml up
 ### Stopping the app
 
 ```bash
-docker compose -f compose.dev.yaml down 'web' --rmi local
+docker compose -f compose.dev.yaml down 'web' --rmi local --volumes
 ```
 
 ### Building the app
