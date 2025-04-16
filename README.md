@@ -4,7 +4,6 @@ A simple landing page - asian restaurant landing page with react
 
 ### Prerequisites
 
-- Node.js
 - React.js
 - Docker
 
