@@ -1,7 +1,7 @@
 pipeline {
     agent {
         docker {
-            image 'cheulong/jenkins-nodejs-agent:1.0.2'
+            label 'docker-agent-nodejs-1.0.2'
         }
     }
     stages {
