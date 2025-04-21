@@ -1,5 +1,9 @@
 pipeline {
-    agent { dockerfile true }
+    agent {
+        node {
+            label 'docker-agent-nodejs-1.0.2'
+        }
+    }
     stages {
         stage('Build') {
             steps {
