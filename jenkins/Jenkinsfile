@@ -1,5 +1,11 @@
 pipeline {
-    agent any
+    agent {
+        docker {
+            image 'jenkins-nodejs-agent:1.0.2'
+            label 'jenkins-nodejs-agent:1.0.2'
+            reuseNode true
+        }
+    }
     stages {
         stage('Build') {
             steps {
