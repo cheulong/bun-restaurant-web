@@ -7,29 +7,19 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                    githubNotify context: 'build', status: 'PENDING', description: 'Build started'
+                githubChecks name: 'Build', summary: 'Building app', text: 'Build started...'
                 echo 'Building..'
             }
         }
         stage('Test') {
             steps {
-                    githubNotify context: 'tests', status: 'SUCCESS', description: 'Tests passed'
                 echo 'Testing..'
             }
         }
         stage('Deploy') {
             steps {
-                    githubNotify context: 'deploy', status: 'SUCCESS', description: 'Deploying'
                 echo 'Deploying....'
             }
-        }
-    }
-    post {
-        success {
-                githubNotify context: 'build', status: 'SUCCESS', description: 'Build succeeded'
-        }
-        failure {
-                githubNotify context: 'build', status: 'FAILURE', description: 'Build failed'
         }
     }
 }
