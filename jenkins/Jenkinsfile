@@ -7,8 +7,9 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                githubChecks name: 'Build Stage', summary: 'Building the project', text: 'Starting build...'
-                echo 'Building..'
+                githubChecks name: 'build', status: 'in_progress'
+                echo "Building..."
+                githubChecks name: 'build', status: 'completed', conclusion: 'success'
             }
         }
         stage('Test') {
